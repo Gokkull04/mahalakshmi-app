@@ -1,70 +1,86 @@
-import React from "react";
-import maha0 from './img/maha-0.jpg'
-import maha1 from './img/maha-1.jpg'
+import React from 'react';
+import { MdEmail, MdPhone } from 'react-icons/md';
+import { FaCheck } from 'react-icons/fa';
 
-const PropertyCard = () => {
+function PropertyCard() {
   return (
-    <div className="bg-white rounded-lg shadow-lg w-96 p-6 relative">
-      {/* Social Media Icons */}
-      <div className="absolute top-4 right-4 flex space-x-2">
-        <a href="#" className="text-gray-600 hover:text-gray-800">
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" className="text-gray-600 hover:text-gray-800">
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="#" className="text-gray-600 hover:text-gray-800">
-          <i className="fab fa-instagram"></i>
-        </a>
+    <div className="min-h-screen flex flex-col">
+      {/* Gray Background Section */}
+      <div className="bg-gray-200 w-full flex-grow">
+        {/* Add any additional content here if needed */}
       </div>
 
-      {/* Main Content */}
-      <h2 className="text-3xl font-extrabold mb-4">MAHALAKSHMI Builders and Promoters</h2>
-      
-      {/* Property Image */}
-      <div className="relative mb-6">
-        <img
-          src={maha0}
-          alt="Property"
-          className="w-full h-40 object-cover rounded-md"
-        />
-        <div className="absolute -bottom-8 left-4 w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-md">
-          <img
-            src={maha1}
-            alt="Room"
-            className="w-full h-full object-cover"
-          />
+      {/* Footer Section */}
+      <div className="bg-white text-black py-6 px-6 flex flex-col items-center w-full">
+        {/* Land Features Section */}
+        <div className="mb-4 w-full max-w-4xl flex justify-end">
+          <div className="text-right">
+            <h2 className="text-2xl font-bold">Land Features</h2>
+            <ul className="mt-4 space-y-2 list-disc list-inside">
+              <li className="flex items-center">
+                <div className="relative w-8 h-8 flex items-center justify-center">
+                  <div className="w-full h-full border-2 border-[#0ef] rounded-full flex items-center justify-center">
+                    <FaCheck className="text-black" style={{ fontSize: '1.25rem' }} />
+                  </div>
+                </div>
+                <span className="ml-2">CMDA and RERA Approved</span>
+              </li>
+              <li className="flex items-center">
+                <div className="relative w-8 h-8 flex items-center justify-center">
+                  <div className="w-full h-full border-2 border-[#0ef] rounded-full flex items-center justify-center">
+                    <FaCheck className="text-black" style={{ fontSize: '1.25rem' }} />
+                  </div>
+                </div>
+                <span className="ml-2">Free Patta Registration</span>
+              </li>
+              <li className="flex items-center">
+                <div className="relative w-8 h-8 flex items-center justify-center">
+                  <div className="w-full h-full border-2 border-[#0ef] rounded-full flex items-center justify-center">
+                    <FaCheck className="text-black" style={{ fontSize: '1.25rem' }} />
+                  </div>
+                </div>
+                <span className="ml-2">90% Bank Loan Available</span>
+              </li>
+              <li className="flex items-center">
+                <div className="relative w-8 h-8 flex items-center justify-center">
+                  <div className="w-full h-full border-2 border-[#0ef] rounded-full flex items-center justify-center">
+                    <FaCheck className="text-black" style={{ fontSize: '1.25rem' }} />
+                  </div>
+                </div>
+                <span className="ml-2">Spot Booking Rs 1000 only</span>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      {/* Features List */}
-      <ul className="mt-10 mb-6 text-gray-700">
-        <li className="flex items-center mb-2">
-          <span className="w-2 h-2 bg-gray-800 rounded-full mr-2"></span>5 Bedrooms
-        </li>
-        <li className="flex items-center mb-2">
-          <span className="w-2 h-2 bg-gray-800 rounded-full mr-2"></span>Living Rooms
-        </li>
-        <li className="flex items-center mb-2">
-          <span className="w-2 h-2 bg-gray-800 rounded-full mr-2"></span>Kitchen Rooms
-        </li>
-        <li className="flex items-center">
-          <span className="w-2 h-2 bg-gray-800 rounded-full mr-2"></span>Swimming Pool
-        </li>
-      </ul>
+        {/* Footer Actions */}
+        <div className="flex items-center justify-between w-full max-w-4xl mt-4" style={{ gap: '8rem' }}>
+          {/* Phone Number Section */}
+          <a href="tel:+919994873204" className="flex items-center text-black py-2 px-4 rounded hover:text-gray-600">
+            <MdPhone className="h-10 w-10 mr-4" />
+            <div className="flex flex-col">
+              <span className="text-base">More information call us</span>
+              <span className="text-sm">+91 9994873204</span>
+            </div>
+          </a>
 
-      {/* Price and Contact Info */}
-      <div className="border-t pt-4">
-        <p className="text-2xl font-bold text-brown-600 mb-2">Price: $35,000</p>
-        <div className="text-gray-600">
-          <p>More Info:</p>
-          <a href="tel:+01234567890" className="text-gray-800 font-semibold hover:text-gray-600">
-            +0123 456 7890
+          {/* Book Now Button */}
+          <button className="bg-black text-white border-white border-2 py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black">
+            Book Now
+          </button>
+
+          {/* Email Section */}
+          <a href="mailto:info@example.com" className="flex items-center text-black py-2 px-4 rounded hover:text-gray-600">
+            <MdEmail className="h-10 w-10 mr-4" />
+            <div className="flex flex-col">
+              <span className="text-base">EMAIL US</span>
+              <span className="text-sm">emmanuelsk04@gmail.com</span>
+            </div>
           </a>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default PropertyCard;
