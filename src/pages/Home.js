@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center px-4">
-      <div className="text-center">
+      <div className="text-center"> 
         {/* Responsive Heading */}
         <h1 className="text-3xl sm:text-5xl font-bold mb-6 text-blue-900 animate-pulse">
           Welcome to Mahalakshmi <br /> Builders and Land Promoters
