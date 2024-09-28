@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="bg-blue-900 text-white py-4">
       <div className="container mx-auto text-center px-4">
         <p className="text-sm sm:text-base">
-          &copy; {new Date().getFullYear()} Mahalakshmi Builders and
-          Enterprises.
+          &copy; {new Date().getFullYear()} Mahalakshmi Builders &
+          Land Promoters.
           <span className="block sm:inline"> All rights reserved.</span>
         </p>
       </div>
