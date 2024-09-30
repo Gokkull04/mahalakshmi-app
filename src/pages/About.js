@@ -10,6 +10,17 @@ const fadeIn = {
   visible: { opacity: 1, y: 0 },
 };
 
+// Container variant for staggered children animation
+const staggerContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // Delay between each card animation
+    },
+  },
+};
+
 const About = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
@@ -25,14 +36,16 @@ const About = () => {
           Our Works
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
           {/* First Image */}
           <motion.div
             className="bg-white shadow-lg rounded-lg p-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
             variants={fadeIn}
           >
             <img
@@ -49,10 +62,6 @@ const About = () => {
           {/* Second Image */}
           <motion.div
             className="bg-white shadow-lg rounded-lg p-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
             variants={fadeIn}
           >
             <img
@@ -69,10 +78,6 @@ const About = () => {
           {/* Third Image */}
           <motion.div
             className="bg-white shadow-lg rounded-lg p-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
             variants={fadeIn}
           >
             <img
@@ -85,7 +90,7 @@ const About = () => {
               amenities. Price: Reasonable pricing for exceptional quality.
             </p>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact Details Section */}
