@@ -26,7 +26,7 @@ const staggerContainer = {
 const About = () => {
   return (
     <div
-      className="bg-gray-100 min-h-screen p-6"
+      className="bg-gray-100 min-h-screen p-6 flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
@@ -47,7 +47,7 @@ const About = () => {
         </motion.h2>
 
         <motion.div
-          className="flex flex-col space-y-8"
+          className="flex flex-col space-y-8 items-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -55,17 +55,17 @@ const About = () => {
         >
           {/* First Card: Image on Right, Description on Left */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row"
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row items-center justify-center"
             variants={fadeIn}
             transition={{ duration: 0.5 }}
           >
             <div className="flex-1 flex items-center justify-center">
-              <p className="text-gray-700 text-lg p-4">
+              <p className="text-gray-700 text-lg p-4 text-center">
                 A stunning residential building project completed with attention
                 to detail. Price: Reasonable and affordable.
               </p>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 flex items-center justify-center">
               <img
                 src={companyImage1}
                 alt="Company work 1"
@@ -76,17 +76,17 @@ const About = () => {
 
           {/* Second Card: Image on Left, Description on Right */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row-reverse"
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row-reverse items-center justify-center"
             variants={fadeIn}
             transition={{ duration: 0.5 }}
           >
             <div className="flex-1 flex items-center justify-center">
-              <p className="text-gray-700 text-lg p-4">
+              <p className="text-gray-700 text-lg p-4 text-center">
                 Commercial complex built with modern designs and high-end
                 materials. Price: Competitive pricing guaranteed.
               </p>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 flex items-center justify-center">
               <img
                 src={companyImage2}
                 alt="Company work 2"
@@ -97,17 +97,17 @@ const About = () => {
 
           {/* Third Card: Image on Right, Description on Left */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row"
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row items-center justify-center"
             variants={fadeIn}
             transition={{ duration: 0.5 }}
           >
             <div className="flex-1 flex items-center justify-center">
-              <p className="text-gray-700 text-lg p-4">
+              <p className="text-gray-700 text-lg p-4 text-center">
                 Luxury villa development with elegant finishes and premium
                 amenities. Price: Reasonable pricing for exceptional quality.
               </p>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 flex items-center justify-center">
               <img
                 src={companyImage3}
                 alt="Company work 3"
