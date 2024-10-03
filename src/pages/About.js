@@ -32,6 +32,7 @@ const About = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed", // This makes the background image fixed
       }}
     >
       {/* Our Works Section */}
@@ -43,7 +44,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           variants={fadeIn}
         >
-          Our Works
+          ABOUT US
         </motion.h2>
 
         <motion.div
@@ -61,14 +62,22 @@ const About = () => {
           >
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-700 text-lg p-4 text-center">
-                A stunning residential building project completed with attention
-                to detail. Price: Reasonable and affordable.
+                <strong>Project: Luxury Residential Apartments</strong> <br />
+                This high-end residential project redefines modern living,
+                featuring spacious apartments with breathtaking views, premium
+                interiors, and state-of-the-art amenities. Each unit is designed
+                to maximize natural light and airflow, offering an unparalleled
+                living experience. Ideal for families and professionals looking
+                for an exclusive living environment in the heart of the city.
+                <br />
+                <strong>Price:</strong> Competitive pricing with flexible
+                payment options available.
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
               <img
                 src={companyImage1}
-                alt="Company work 1"
+                alt="Luxury Residential Apartments"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
@@ -82,14 +91,22 @@ const About = () => {
           >
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-700 text-lg p-4 text-center">
-                Commercial complex built with modern designs and high-end
-                materials. Price: Competitive pricing guaranteed.
+                <strong>Project: Modern Commercial Complex</strong> <br />
+                A prime commercial development catering to businesses of all
+                sizes, offering premium office spaces equipped with advanced
+                facilities. With its strategic location in the business hub, the
+                complex provides excellent visibility and easy access for both
+                customers and employees. The building features a sustainable
+                design with energy-efficient technologies.
+                <br />
+                <strong>Price:</strong> Affordable lease terms available for
+                long-term tenants.
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
               <img
                 src={companyImage2}
-                alt="Company work 2"
+                alt="Modern Commercial Complex"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
@@ -103,14 +120,22 @@ const About = () => {
           >
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-700 text-lg p-4 text-center">
-                Luxury villa development with elegant finishes and premium
-                amenities. Price: Reasonable pricing for exceptional quality.
+                <strong>Project: Premium Villa Development</strong> <br />
+                These luxury villas offer the ultimate in privacy and comfort,
+                nestled in an exclusive community with lush greenery and modern
+                amenities. Each villa is designed with contemporary architecture
+                and is equipped with a private pool, garden area, and top-notch
+                security systems. Perfect for families or individuals seeking a
+                peaceful and opulent lifestyle away from the city buzz.
+                <br />
+                <strong>Price:</strong> Flexible pricing plans tailored to meet
+                customer needs.
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
               <img
                 src={companyImage3}
-                alt="Company work 3"
+                alt="Premium Villa Development"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
@@ -131,7 +156,7 @@ const About = () => {
         </motion.h2>
 
         <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 text-center w-3/4 lg:w-1/2 mx-auto"
+          className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
