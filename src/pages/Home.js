@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bg from "../img/bg.png" 
+import bg from "../img/bg.png";
 
 const Home = () => {
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4"
+      className="min-h-screen flex flex-col items-center justify-center px-4 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "fixed", // Fixed for all views
       }}
     >
       <div className="text-center">

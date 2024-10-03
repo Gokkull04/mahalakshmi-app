@@ -1,24 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
 import bg from "../img/bg.png";
-import companyImage1 from "../img/img1.jpeg"; // Replace with actual image paths
+import companyImage1 from "../img/img1.jpeg";
 import companyImage2 from "../img/img2.jpeg";
 import companyImage3 from "../img/img3.jpeg";
 
-// Framer Motion variants for card animation
+// Animation variants
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1, // Increased duration for smoother effect
+      ease: "easeInOut", // Smooth ease effect
+    },
+  },
 };
 
-// Container variant for staggered animation
 const staggerContainer = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5, // Delay between each card animation
-      when: "beforeChildren", // Ensures the cards animate one by one
+      staggerChildren: 0.4, // Delay between card animations for smoother flow
+      duration: 0.8, // Duration across all elements
+      ease: "easeInOut", // Uniform easing
     },
   },
 };
@@ -32,49 +39,56 @@ const About = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed", // This makes the background image fixed
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Our Works Section */}
-      <section className="mb-12">
+      <motion.section
+        className="mb-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
         <motion.h2
           className="text-4xl font-bold text-center text-blue-900 mb-8"
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
           variants={fadeIn}
         >
           ABOUT US
         </motion.h2>
 
         <motion.div
-          className="flex flex-col space-y-8 items-center"
+          className="flex flex-col space-y-4 items-center" // Ensures proper spacing and alignment
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
           variants={staggerContainer}
+          viewport={{ once: true, amount: 0.2 }}
         >
-          {/* First Card: Image on Right, Description on Left */}
+          {/* First Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row items-center justify-center"
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60" // Reduced opacity
             variants={fadeIn}
-            transition={{ duration: 0.5 }}
           >
+            <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
+              <img
+                src={companyImage1}
+                alt="Luxury Residential Apartments"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-700 text-lg p-4 text-center">
                 <strong>Project: Luxury Residential Apartments</strong> <br />
-                This high-end residential project redefines modern living,
-                featuring spacious apartments with breathtaking views, premium
-                interiors, and state-of-the-art amenities. Each unit is designed
-                to maximize natural light and airflow, offering an unparalleled
-                living experience. Ideal for families and professionals looking
-                for an exclusive living environment in the heart of the city.
+                High-end residential project redefines modern living and is
+                designed to maximize natural light and airflow, offering an
+                unparalleled living experience. Ideal for families seeking an
+                exclusive living environment in the heart of the city.
                 <br />
                 <strong>Price:</strong> Competitive pricing with flexible
                 payment options available.
               </p>
             </div>
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 hidden lg:flex items-center justify-center">
               <img
                 src={companyImage1}
                 alt="Luxury Residential Apartments"
@@ -83,12 +97,18 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Second Card: Image on Left, Description on Right */}
+          {/* Second Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row-reverse items-center justify-center"
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row-reverse items-center justify-between mb-4 border border-gray-300 bg-opacity-60" // Reduced opacity
             variants={fadeIn}
-            transition={{ duration: 0.5 }}
           >
+            <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
+              <img
+                src={companyImage2}
+                alt="Modern Commercial Complex"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-700 text-lg p-4 text-center">
                 <strong>Project: Modern Commercial Complex</strong> <br />
@@ -96,14 +116,13 @@ const About = () => {
                 sizes, offering premium office spaces equipped with advanced
                 facilities. With its strategic location in the business hub, the
                 complex provides excellent visibility and easy access for both
-                customers and employees. The building features a sustainable
-                design with energy-efficient technologies.
+                customers and employees.
                 <br />
                 <strong>Price:</strong> Affordable lease terms available for
                 long-term tenants.
               </p>
             </div>
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 hidden lg:flex items-center justify-center">
               <img
                 src={companyImage2}
                 alt="Modern Commercial Complex"
@@ -112,27 +131,31 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Third Card: Image on Right, Description on Left */}
+          {/* Third Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 h-96 flex flex-col lg:flex-row items-center justify-center"
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60" // Reduced opacity
             variants={fadeIn}
-            transition={{ duration: 0.5 }}
           >
+            <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
+              <img
+                src={companyImage3}
+                alt="Premium Villa Development"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-700 text-lg p-4 text-center">
                 <strong>Project: Premium Villa Development</strong> <br />
-                These luxury villas offer the ultimate in privacy and comfort,
-                nestled in an exclusive community with lush greenery and modern
-                amenities. Each villa is designed with contemporary architecture
-                and is equipped with a private pool, garden area, and top-notch
-                security systems. Perfect for families or individuals seeking a
-                peaceful and opulent lifestyle away from the city buzz.
+                Each villa is designed with contemporary architecture and is
+                equipped with a garden area and top-notch security systems.
+                Perfect for families or individuals seeking a peaceful and
+                opulent lifestyle away from the city buzz.
                 <br />
                 <strong>Price:</strong> Flexible pricing plans tailored to meet
                 customer needs.
               </p>
             </div>
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 hidden lg:flex items-center justify-center">
               <img
                 src={companyImage3}
                 alt="Premium Villa Development"
@@ -141,39 +164,39 @@ const About = () => {
             </div>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Contact Details Section */}
-      <section>
-        <motion.h2
-          className="text-4xl font-bold text-center text-blue-900 mb-8"
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
-          variants={fadeIn}
-        >
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeIn}
+      >
+        <h2 className="text-4xl font-bold text-center text-blue-900 mb-8">
           Contact Details
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          variants={fadeIn}
-        >
+        <div className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto">
           <p className="text-lg text-gray-800 mb-4">
-            <strong>Company Name:</strong> Mahalakshmi Builders and Enterprises
+            <strong>Company Name:</strong>{" "}
+            <span className="uppercase">
+              Mahalakshmi Builders & Land Promoters
+            </span>
           </p>
           <p className="text-lg text-gray-800 mb-4">
-            <strong>Location:</strong> 1234 Street Name, City, State, ZIP
+            <strong>Location: </strong>PLOT NO. 9/2, J BLOCK,
+            16th MAIN ROAD,<br></br> ANNA NAGAR WEST,
+            CHENNAI - 600 040
           </p>
-          <p className="text-lg text-gray-800">
-            <strong>Contact Number:</strong> +123 456 7890
+          <p className="text-lg text-gray-800 mb-4">
+            <strong>Email: </strong> mahalakshmibuilders2002@gmail.com
           </p>
-        </motion.div>
-      </section>
+          <p className="text-lg text-gray-800 mb-4">
+            <strong>Contact Number:</strong> 044 42801213
+          </p>
+        </div>
+      </motion.section>
     </div>
   );
 };
