@@ -52,6 +52,11 @@ const Navbar = () => {
               About
             </Link>
           </li>
+          <li>
+            <Link to="/contact" className="hover:text-yellow-400 transition">
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
 
@@ -78,6 +83,15 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="block text-white hover:text-yellow-400 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
             </Link>
           </li>
         </ul>
