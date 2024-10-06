@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bg from "../img/bg.png";
+import logo from "../img/logo.png"
 
 const Home = () => {
   return (
@@ -12,8 +13,9 @@ const Home = () => {
       }}
     >
       <div className="text-center">
+        <img src={logo} alt="logo" className="h-52 w-full"></img>
         {/* Responsive Heading */}
-        <h1 className="text-3xl sm:text-5xl font-bold mb-6 text-blue-900 animate-pulse">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-6 text-pink-500 animate-pulse">
           Welcome to Mahalakshmi <br /> Builders and Land Promoters
         </h1>
         {/* Responsive Paragraph */}

@@ -12,8 +12,8 @@ const fadeIn = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1, // Increased duration for smoother effect
-      ease: "easeInOut", // Smooth ease effect
+      duration: 1,
+      ease: "easeInOut",
     },
   },
 };
@@ -23,9 +23,9 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4, // Delay between card animations for smoother flow
-      duration: 0.8, // Duration across all elements
-      ease: "easeInOut", // Uniform easing
+      staggerChildren: 0.4,
+      duration: 0.8,
+      ease: "easeInOut",
     },
   },
 };
@@ -58,7 +58,7 @@ const About = () => {
         </motion.h2>
 
         <motion.div
-          className="flex flex-col space-y-4 items-center" // Ensures proper spacing and alignment
+          className="flex flex-col space-y-4 items-center"
           initial="hidden"
           whileInView="visible"
           variants={staggerContainer}
@@ -66,7 +66,7 @@ const About = () => {
         >
           {/* First Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60" // Reduced opacity
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
             variants={fadeIn}
           >
             <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
@@ -99,7 +99,7 @@ const About = () => {
 
           {/* Second Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row-reverse items-center justify-between mb-4 border border-gray-300 bg-opacity-60" // Reduced opacity
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row-reverse items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
             variants={fadeIn}
           >
             <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
@@ -133,7 +133,7 @@ const About = () => {
 
           {/* Third Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60" // Reduced opacity
+            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
             variants={fadeIn}
           >
             <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
@@ -167,6 +167,7 @@ const About = () => {
       </motion.section>
 
       {/* Contact Details Section */}
+      {/* Contact Details Section */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -177,24 +178,59 @@ const About = () => {
           Contact Details
         </h2>
 
-        <div className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto">
-          <p className="text-lg text-gray-800 mb-4">
-            <strong>Company Name:</strong>{" "}
-            <span className="uppercase">
+        <div className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl">
+          {/* Company Name */}
+          <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
+            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
+              <strong>Company Name:</strong>
+            </p>
+            <p className="text-base sm:text-lg text-gray-800 font-semibold">
               Mahalakshmi Builders & Land Promoters
-            </span>
-          </p>
-          <p className="text-lg text-gray-800 mb-4">
-            <strong>Location: </strong>PLOT NO. 9/2, J BLOCK,
-            16th MAIN ROAD,<br></br> ANNA NAGAR WEST,
-            CHENNAI - 600 040
-          </p>
-          <p className="text-lg text-gray-800 mb-4">
-            <strong>Email: </strong> mahalakshmibuilders2002@gmail.com
-          </p>
-          <p className="text-lg text-gray-800 mb-4">
-            <strong>Contact Number:</strong> 044 42801213
-          </p>
+            </p>
+          </div>
+
+          {/* Location */}
+          <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
+            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
+              <strong>Location:</strong>
+            </p>
+            <a
+              href="https://www.google.com/maps?q=+J+BLOCK,+16th+MAIN+ROAD,+ANNA+NAGAR+WEST,+TAMILNADU+CHENNAI+-+600+040"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base sm:text-lg text-blue-600 hover:underline"
+            >
+              NO. 9/2, J BLOCK, 16th MAIN ROAD,
+              <br />
+              ANNA NAGAR WEST, TAMILNADU CHENNAI - 600 040
+            </a>
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
+            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
+              <strong>Email:</strong>
+            </p>
+            <a
+              href="mailto:mahalakshmibuilders2002@gmail.com"
+              className="text-base sm:text-lg text-blue-600 hover:underline"
+            >
+              mahalakshmibuilders2002@gmail.com
+            </a>
+          </div>
+
+          {/* Contact Number */}
+          <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
+            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
+              <strong>Contact Number:</strong>
+            </p>
+            <a
+              href="tel:04442801213"
+              className="text-base sm:text-lg text-blue-600 hover:underline"
+            >
+              044 42801213
+            </a>
+          </div>
         </div>
       </motion.section>
     </div>
