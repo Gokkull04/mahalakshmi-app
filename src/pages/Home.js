@@ -13,9 +13,14 @@ const Home = () => {
       }}
     >
       <div className="text-center">
-        <img src={logo} alt="logo" className="h-52 w-full"></img>
+        <img
+          src={logo}
+          alt="logo"
+          className="w-full h-auto max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto"
+        />
+
         {/* Responsive Heading */}
-        <h1 className="text-3xl sm:text-5xl font-bold mb-6 text-pink-500 animate-pulse">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-6 text-pink-500 animate-pulse mt-4">
           Welcome to Mahalakshmi <br /> Builders and Land Promoters
         </h1>
         {/* Responsive Paragraph */}
