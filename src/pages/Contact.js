@@ -1,7 +1,14 @@
 import React from 'react'
 import bg from "../img/bg.png";
+import { motion } from "framer-motion"; // For carousel animation
+import o1 from "../img/o1.jpeg"; // Import your images
+import o2 from "../img/o2.jpeg";
+import o3 from "../img/o3.jpeg";
+import o4 from "../img/o4.jpeg";
+import o5 from "../img/o5.jpeg";
 
 export default function Contact() {
+  const images = [o1, o2, o3, o4, o5];
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4 bg-cover bg-center bg-no-repeat"
@@ -10,6 +17,39 @@ export default function Contact() {
         backgroundAttachment: "fixed", // Fixed for all views
       }}
     >
+      <h1 className="text-5xl font-bold text-center text-blue-900 mb-8">
+        Our Company
+      </h1>
+
+      {/* Company Description */}
+      <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-10">
+        Welcome to Mahalakshmi Builders & Land Promoters. We are committed to
+        providing top-notch real estate services, delivering high-quality
+        buildings, and creating sustainable spaces. Our expertise in the
+        industry ensures that our customers receive nothing but the best.
+      </p>
+
+      {/* Carousel Section */}
+      <div className="relative overflow-hidden w-full max-w-4xl mx-auto">
+  <motion.div
+    className="flex space-x-4" 
+    animate={{ x: ["0%", "-500%"] }} 
+    transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
+  >
+    {images.map((image, index) => (
+      <div key={index} className="w-full flex-shrink-0">
+        <img
+          src={image}
+          alt={`carousel-${index}`}
+          className="w-full h-96 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+    ))}
+  </motion.div>
+</div>
+
+
+
       <h2 className="text-4xl font-bold text-center text-blue-900 mb-8">
         Contact Details
       </h2>
