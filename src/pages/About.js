@@ -164,6 +164,21 @@ const About = () => {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Contact Us Button */}
+        <motion.div
+          className="mt-8 flex justify-center"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+        >
+          <a
+            href="/contact" // Update the link to your contact page
+            className="bg-blue-900 text-white py-2 sm:py-3 px-6 sm:px-8 rounded-lg hover:bg-yellow-400 hover:text-blue-900 transition"
+          >
+            Contact Us
+          </a>
+        </motion.div>
       </motion.section>
     </div>
   );
