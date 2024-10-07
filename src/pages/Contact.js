@@ -17,12 +17,12 @@ export default function Contact() {
         backgroundAttachment: "fixed", // Fixed for all views
       }}
     >
-      <h1 className="text-5xl font-bold text-center text-blue-900 mb-8">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-900 mb-6 sm:mb-8">
         Our Company
       </h1>
 
       {/* Company Description */}
-      <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-10">
+      <p className="text-base sm:text-lg md:text-xl text-center text-gray-700 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-10 px-4">
         Welcome to Mahalakshmi Builders & Land Promoters. We are committed to
         providing top-notch real estate services, delivering high-quality
         buildings, and creating sustainable spaces. Our expertise in the
@@ -30,31 +30,28 @@ export default function Contact() {
       </p>
 
       {/* Carousel Section */}
-      <div className="relative overflow-hidden w-full max-w-4xl mx-auto">
-  <motion.div
-    className="flex space-x-4" 
-    animate={{ x: ["0%", "-500%"] }} 
-    transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
-  >
-    {images.map((image, index) => (
-      <div key={index} className="w-full flex-shrink-0">
-        <img
-          src={image}
-          alt={`carousel-${index}`}
-          className="w-full h-96 object-cover rounded-lg shadow-lg"
-        />
+      <div className="relative overflow-hidden w-full max-w-xs sm:max-w-md md:max-w-4xl mx-auto mb-6 sm:mb-8">
+        <motion.div
+          className="flex space-x-2 sm:space-x-4"
+          animate={{ x: ["0%", "-500%"] }}
+          transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="w-full flex-shrink-0">
+              <img
+                src={image}
+                alt={`carousel-${index}`}
+                className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          ))}
+        </motion.div>
       </div>
-    ))}
-  </motion.div>
-</div>
-
-
-
-      <h2 className="text-4xl font-bold text-center text-blue-900 mb-8">
+      <h2 className="text-4xl font-bold text-center text-blue-900 mb-8 ">
         Contact Details
       </h2>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl">
+      <div className="bg-white shadow-lg rounded-lg p-6 text-center mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl mb-6 sm:mb-8">
         {/* Company Name */}
         <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
           <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
