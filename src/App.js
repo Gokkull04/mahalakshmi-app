@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import BuildedProjectsPage from "./pages/BuildedProjectsPage";
+import PlotsPage from "./pages/PlotsPage";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="about" element={<About />} />
+            <Route path="plots" element={<PlotsPage />} />
+            <Route path="builded-projects" element={<BuildedProjectsPage />} />
           </Routes>
         </div>
         <Footer />
