@@ -1,49 +1,63 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
+import { motion } from "framer-motion"; // Import Framer Motion for animations
 import video1 from "../vid/vid-1.mp4";
-import video2 from "../vid/vid-1.mp4";
-import video3 from "../vid/vid-1.mp4";
+
+// Animation variants for the video page
+const fadeIn = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const PlotsPage = () => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0); // Track the current video index
-  const videoRefs = [useRef(null), useRef(null), useRef(null)]; // Refs for videos
+  const videoRef = useRef(null); // Ref for the single video
 
-  // Function to autoplay videos one after another
-  const handleVideoEnd = (index) => {
-    if (index < videoRefs.length - 1) {
-      setCurrentVideoIndex(index + 1);
-      videoRefs[index + 1].current.play();
-    }
-  };
-
-  // Autoplay the first video
+  // Autoplay the video when the component mounts
   useEffect(() => {
-    setCurrentVideoIndex(0); // Start from the first video
-    videoRefs[0].current.play();
+    const playVideo = async () => {
+      try {
+        await videoRef.current.play(); // Attempt to play the video
+      } catch (error) {
+        console.error("Error attempting to play the video:", error);
+      }
+    };
+
+    playVideo(); // Call the autoplay function
   }, []);
 
   return (
-    <div className="flex flex-col items-center space-y-4 mt-16">
-      <h2 className="text-2xl font-bold text-blue-900 mb-4">Plots Videos</h2>
-      {/* Video Carousel Section */}
-      <div className="w-full flex justify-center overflow-hidden">
-        <div className="flex">
-          {videoRefs.map((ref, index) => (
-            <video
-              key={index}
-              ref={ref}
-              src={[video1, video2, video3][index]}
-              className={`${
-                currentVideoIndex === index
-                  ? "block w-full h-auto rounded-lg shadow-lg"
-                  : "hidden"
-              }`}
-              onEnded={() => handleVideoEnd(index)}
-              controls
-              muted
-            />
-          ))}
-        </div>
-      </div>
+    <div className="flex flex-col items-center space-y-4 p-6">
+      <motion.h2
+        className="text-3xl font-bold text-blue-900 mb-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn} // Heading fade-in effect
+      >
+        Plots Videos
+      </motion.h2>
+      {/* Single Video Section */}
+      <motion.div
+        className="w-full flex justify-center overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn} // Video section fade-in effect
+      >
+        <video
+          ref={videoRef}
+          src={video1}
+          className="block w-[640px] h-[360px] rounded-lg shadow-lg" // Custom width and height for the video
+          controls
+          muted
+        />
+      </motion.div>
     </div>
   );
 };

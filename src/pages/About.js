@@ -1,32 +1,97 @@
 // src/pages/AboutPage.js
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useState } from "react";
+import { motion } from "framer-motion"; // Import Framer Motion for animations
+import PlotsPage from "./PlotsPage";
+import BuildedProjectsPage from "./BuildedProjectsPage";
+import bg from "../img/bg.png";
+
+// Animation variants for "About Us" heading
+const headingAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
+// Animation variants for the floating tab
+const tabAnimation = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const AboutPage = () => {
-  return (
-    <div className="mt-16">
-      <h1 className="text-3xl font-bold text-center text-blue-900 mb-8">
-        About Us
-      </h1>
+  const [activeTab, setActiveTab] = useState("plots"); // Default to "plots" tab
 
-      {/* Sub-Navbar for Plots and Builded Projects */}
-      <nav className="flex justify-center space-x-4 mb-6">
-        <Link
-          to="plots"
-          className="px-4 py-2 bg-gray-200 text-blue-900 rounded-lg"
+  return (
+    <div
+      className="bg-gray-100 min-h-screen p-6 flex flex-col justify-center items-center"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Animated "About Us" heading */}
+      <motion.h1
+        className="text-4xl font-bold text-center text-blue-900 mb-8"
+        initial="hidden"
+        animate="visible"
+        variants={headingAnimation}
+      >
+        About Us
+      </motion.h1>
+
+      {/* Floating bar with border, shadow, and animation */}
+      <motion.div
+        className="flex justify-center mb-8 bg-gray-100 rounded-lg shadow-lg border border-gray-300 p-4"
+        initial="hidden"
+        animate="visible"
+        variants={tabAnimation}
+        style={{
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", // Soft shadow
+        }}
+      >
+        <button
+          className={`px-4 py-2 mx-2 rounded-lg ${
+            activeTab === "plots"
+              ? "bg-blue-600 text-white"
+              : "bg-gray-200 text-blue-900"
+          }`}
+          onClick={() => setActiveTab("plots")}
         >
           Plots
-        </Link>
-        <Link
-          to="builded-projects"
-          className="px-4 py-2 bg-gray-200 text-blue-900 rounded-lg"
+        </button>
+        <button
+          className={`px-4 py-2 mx-2 rounded-lg ${
+            activeTab === "builded-projects"
+              ? "bg-blue-600 text-white"
+              : "bg-gray-200 text-blue-900"
+          }`}
+          onClick={() => setActiveTab("builded-projects")}
         >
-          Builded Projects
-        </Link>
-      </nav>
+          Building Projects
+        </button>
+      </motion.div>
 
-      {/* Outlet to display nested routes */}
-      <Outlet />
+      {/* Conditional rendering based on active tab */}
+      <div className="content">
+        {activeTab === "plots" && <PlotsPage />}
+        {activeTab === "builded-projects" && <BuildedProjectsPage />}
+      </div>
     </div>
   );
 };
