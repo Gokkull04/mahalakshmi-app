@@ -1,9 +1,10 @@
 // src/pages/AboutPage.js
 import React, { useState } from "react";
 import { motion } from "framer-motion"; // Import Framer Motion for animations
-import PlotsPage from "./PlotsPage";
-import BuildedProjectsPage from "./BuildedProjectsPage";
-import bg from "../img/bg.png";
+import PlotsPage from "./Plots";
+import BuildedProjectsPage from "./Projects";
+import desktopBg from "../img/bg.png"; // Desktop background image
+import mobileBg from "../img/bg1.png"; // Mobile background image
 
 // Animation variants for "About Us" heading and floating tab
 const headingAnimation = {
@@ -22,19 +23,34 @@ const AboutPage = () => {
   const [activeTab, setActiveTab] = useState("plots"); // Default to "plots" tab
 
   return (
-    <div
-      className="bg-gray-100 min-h-screen p-6 flex flex-col justify-center items-center"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <div className="min-h-screen p-6 flex flex-col justify-center items-center relative">
+      {/* Desktop Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden sm:block"
+        style={{
+          backgroundImage: `url(${desktopBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      {/* Mobile Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:hidden"
+        style={{
+          backgroundImage: `url(${mobileBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
       {/* Animated "About Us" heading */}
       <motion.h1
-        className="text-4xl font-bold text-center text-blue-900 mb-8"
+        className="text-4xl font-bold text-center text-blue-900 mb-8 relative z-10"
         initial="hidden"
         animate="visible"
         variants={headingAnimation}
@@ -44,10 +60,10 @@ const AboutPage = () => {
 
       {/* Floating bar with border, shadow, and animation */}
       <motion.div
-        className="flex justify-center mb-8 bg-gray-100 rounded-lg shadow-lg border border-gray-300 p-4"
+        className="flex justify-center mb-8 bg-gray-100 rounded-lg shadow-lg border border-gray-300 p-4 relative z-10"
         initial="hidden"
         animate="visible"
-        variants={headingAnimation} 
+        variants={headingAnimation}
         style={{
           boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", // Soft shadow
         }}
@@ -70,12 +86,12 @@ const AboutPage = () => {
           }`}
           onClick={() => setActiveTab("builded-projects")}
         >
-          Building Projects
+          Projects
         </button>
       </motion.div>
 
       {/* Conditional rendering based on active tab */}
-      <div className="content">
+      <div className="content relative z-10">
         {activeTab === "plots" && <PlotsPage />}
         {activeTab === "builded-projects" && <BuildedProjectsPage />}
       </div>

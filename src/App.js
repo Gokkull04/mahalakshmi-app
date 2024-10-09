@@ -5,8 +5,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import BuildedProjectsPage from "./pages/BuildedProjectsPage";
-import PlotsPage from "./pages/PlotsPage";
+import Projects from "./pages/Projects";
+import Plots from "./pages/Plots";
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="about" element={<About />} />
-            <Route path="plots" element={<PlotsPage />} />
-            <Route path="builded-projects" element={<BuildedProjectsPage />} />
+            <Route path="plots" element={<Plots />} />
+            <Route path="builded-projects" element={<Projects />} />
           </Routes>
         </div>
         <Footer />

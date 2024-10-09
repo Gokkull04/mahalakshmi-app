@@ -15,7 +15,7 @@ const fadeIn = {
   },
 };
 
-const PlotsPage = () => {
+const Plots = () => {
   const videoRef = useRef(null); // Ref for the single video
 
   // Autoplay the video when the component mounts
@@ -62,4 +62,4 @@ const PlotsPage = () => {
   );
 };
 
-export default PlotsPage;
+export default Plots;

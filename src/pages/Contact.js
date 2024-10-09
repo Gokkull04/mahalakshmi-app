@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // For animations
-import bg from "../img/bg.png";
+import desktopBg from "../img/bg.png";
+import mobileBg from "../img/bg1.png";
 import o1 from "../img/o1.jpeg"; // Import your images
 import o2 from "../img/o2.jpeg";
 import o3 from "../img/o3.jpeg";
@@ -36,16 +37,30 @@ export default function Contact() {
   const images = [o1, o2, o3, o4, o5];
 
   return (
-    <div
-      className="bg-gray-100 min-h-screen p-6 flex flex-col justify-center items-center"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <div className="min-h-screen p-6 flex flex-col justify-center items-center relative">
+      {/* Desktop Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden sm:block"
+        style={{
+          backgroundImage: `url(${desktopBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      {/* Mobile Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:hidden"
+        style={{
+          backgroundImage: `url(${mobileBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
       <motion.div
         className="min-h-screen flex flex-col items-center justify-center"
         initial="hidden"

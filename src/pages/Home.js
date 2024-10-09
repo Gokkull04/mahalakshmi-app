@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; // Import Framer Motion for animations
-import bg from "../img/bg.png"; // Background image
-import logo from "../img/logo.png"; // Logo image
+import { motion } from "framer-motion";
+import desktopBg from "../img/bg.png";
+import mobileBg from "../img/bg1.png";
+import logo from "../img/logo.png";
 
 // Animation variants
 const fadeIn = {
@@ -31,22 +32,38 @@ const staggerContainer = {
 
 const Home = () => {
   return (
-    <div
-      className="bg-gray-100 min-h-screen p-6 flex flex-col justify-center items-center"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <div className="min-h-screen p-6 flex flex-col justify-center items-center relative">
+      {/* Desktop Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden sm:block"
+        style={{
+          backgroundImage: `url(${desktopBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      {/* Mobile Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:hidden"
+        style={{
+          backgroundImage: `url(${mobileBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      {/* Content */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="text-center"
+        className="text-center relative z-10"
       >
         {/* Logo with Animation */}
         <motion.img

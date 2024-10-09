@@ -30,7 +30,7 @@ const staggerContainer = {
   },
 };
 
-const BuildedProjectsPage = () => {
+const Projects = () => {
   return (
     <div className="min-h-screen p-6 flex flex-col justify-center items-center">
       {/* Our Works Section */}
@@ -160,4 +160,4 @@ const BuildedProjectsPage = () => {
   );
 };
 
-export default BuildedProjectsPage;
+export default Projects;
