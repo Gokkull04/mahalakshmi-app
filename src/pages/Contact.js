@@ -55,7 +55,7 @@ export default function Contact() {
       >
         {/* Title */}
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-blue-900 mb-6 sm:mb-8"
+          className="text-4xl sm:text-4xl md:text-5xl font-bold text-center text-blue-900 mb-6 sm:mb-8"
           variants={fadeIn}
         >
           Our Company

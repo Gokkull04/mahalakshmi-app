@@ -5,7 +5,7 @@ import PlotsPage from "./PlotsPage";
 import BuildedProjectsPage from "./BuildedProjectsPage";
 import bg from "../img/bg.png";
 
-// Animation variants for "About Us" heading
+// Animation variants for "About Us" heading and floating tab
 const headingAnimation = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -13,19 +13,6 @@ const headingAnimation = {
     y: 0,
     transition: {
       duration: 1,
-      ease: "easeInOut",
-    },
-  },
-};
-
-// Animation variants for the floating tab
-const tabAnimation = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.8,
       ease: "easeInOut",
     },
   },
@@ -60,7 +47,7 @@ const AboutPage = () => {
         className="flex justify-center mb-8 bg-gray-100 rounded-lg shadow-lg border border-gray-300 p-4"
         initial="hidden"
         animate="visible"
-        variants={tabAnimation}
+        variants={headingAnimation} 
         style={{
           boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", // Soft shadow
         }}

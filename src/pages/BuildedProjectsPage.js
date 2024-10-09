@@ -4,7 +4,8 @@ import companyImage1 from "../img/img1.jpeg";
 import companyImage2 from "../img/img2.jpeg";
 import companyImage3 from "../img/img3.jpeg";
 
-    const fadeIn = {
+// Fade-in animation variant
+const fadeIn = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
@@ -16,12 +17,13 @@ import companyImage3 from "../img/img3.jpeg";
   },
 };
 
+// Stagger container for better performance on mobile
 const staggerContainer = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
+      staggerChildren: 0.2, // Faster stagger for mobile
       duration: 0.8,
       ease: "easeInOut",
     },
@@ -30,14 +32,13 @@ const staggerContainer = {
 
 const BuildedProjectsPage = () => {
   return (
-    <div
-      className="min-h-screen p-6 flex flex-col justify-center items-center">
+    <div className="min-h-screen p-6 flex flex-col justify-center items-center">
       {/* Our Works Section */}
       <motion.section
         className="mb-12"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }} // Updated for mobile view performance
         variants={staggerContainer}
       >
         <motion.h2
@@ -52,7 +53,7 @@ const BuildedProjectsPage = () => {
           initial="hidden"
           whileInView="visible"
           variants={staggerContainer}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }} // Adjusted for mobile responsiveness
         >
           {/* First Card */}
           <motion.div
