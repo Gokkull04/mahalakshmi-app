@@ -35,7 +35,7 @@ const Projects = () => {
     <div className="min-h-screen p-6 flex flex-col justify-center items-center">
       {/* Our Works Section */}
       <motion.section
-        className="mb-12"
+        className="mb-12 w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }} // Updated for mobile view performance
@@ -49,7 +49,7 @@ const Projects = () => {
         </motion.h2>
 
         <motion.div
-          className="flex flex-col space-y-4 items-center"
+          className="flex flex-col space-y-4 items-center w-full"
           initial="hidden"
           whileInView="visible"
           variants={staggerContainer}
@@ -57,18 +57,18 @@ const Projects = () => {
         >
           {/* First Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
+            className="bg-white shadow-lg rounded-lg p-6 w-full lg:w-3/4 flex flex-col lg:flex-row items-start justify-between mb-4 border border-gray-300 bg-opacity-60"
             variants={fadeIn}
           >
-            <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
+            <div className="flex-1 flex items-start justify-start lg:hidden mb-4">
               <img
                 src={companyImage1}
                 alt="Luxury Residential Apartments"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
-            <div className="flex-1 flex items-center justify-center">
-              <p className="text-gray-700 text-lg p-4 text-center">
+            <div className="flex-1 flex items-start justify-start">
+              <p className="text-gray-700 text-lg lg:p-5 sm:p-2 text-left">
                 <strong>Project: Luxury Residential Apartments</strong> <br />
                 High-end residential project redefines modern living and is
                 designed to maximize natural light and airflow, offering an
@@ -79,7 +79,7 @@ const Projects = () => {
                 payment options available.
               </p>
             </div>
-            <div className="flex-1 hidden lg:flex items-center justify-center">
+            <div className="flex-1 hidden lg:flex items-center justify-start">
               <img
                 src={companyImage1}
                 alt="Luxury Residential Apartments"
@@ -90,7 +90,7 @@ const Projects = () => {
 
           {/* Second Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row-reverse items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
+            className="bg-white shadow-lg rounded-lg p-6 w-full lg:w-3/4 flex flex-col lg:flex-row-reverse items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
             variants={fadeIn}
           >
             <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
@@ -100,8 +100,8 @@ const Projects = () => {
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
-            <div className="flex-1 flex items-center justify-center">
-              <p className="text-gray-700 text-lg p-4 text-center">
+            <div className="flex-1 flex items-start justify-start">
+              <p className="text-gray-700 text-lg lg:p-5 sm:p-2 text-left">
                 <strong>Project: Modern Commercial Complex</strong> <br />
                 A prime commercial development catering to businesses of all
                 sizes, offering premium office spaces equipped with advanced
@@ -124,7 +124,7 @@ const Projects = () => {
 
           {/* Third Card */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-4 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
+            className="bg-white shadow-lg rounded-lg p-6 w-full lg:w-3/4 flex flex-col lg:flex-row items-center justify-between mb-4 border border-gray-300 bg-opacity-60"
             variants={fadeIn}
           >
             <div className="flex-1 flex items-center justify-center lg:hidden mb-4">
@@ -134,8 +134,8 @@ const Projects = () => {
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
-            <div className="flex-1 flex items-center justify-center">
-              <p className="text-gray-700 text-lg p-4 text-center">
+            <div className="flex-1 flex items-start justify-start">
+              <p className="text-gray-700 text-lg lg:p-5 sm:p-2 text-left">
                 <strong>Project: Premium Villa Development</strong> <br />
                 Each villa is designed with contemporary architecture and is
                 equipped with a garden area and top-notch security systems.
