@@ -70,7 +70,7 @@ export default function Contact() {
       >
         {/* Title */}
         <motion.h1
-          className="text-4xl sm:text-4xl md:text-5xl font-bold text-center text-blue-900 mb-6 sm:mb-8 mt-4 sm:mt-6" // Adjusted margin for mobile
+          className="text-4xl sm:text-4xl md:text-5xl font-bold text-center text-pink-500 mb-6 sm:mb-8 mt-4 sm:mt-6" // Adjusted margin for mobile
           variants={fadeIn}
         >
           Our Company
@@ -78,7 +78,7 @@ export default function Contact() {
 
         {/* Description */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl text-center text-gray-700 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-10 px-4"
+          className="text-base sm:text-lg md:text-xl text-left text-gray-700 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-10 px-4"
           variants={fadeIn}
         >
           Welcome to Mahalakshmi Builders & Land Promoters. We are committed to
@@ -114,7 +114,7 @@ export default function Contact() {
 
         {/* Contact Details Header */}
         <motion.h2
-          className="text-4xl font-bold text-center text-blue-900 mb-8"
+          className="text-4xl font-bold text-center text-pink-500 mb-8"
           variants={fadeIn}
         >
           Contact Details
@@ -127,8 +127,8 @@ export default function Contact() {
         >
           {/* Company Name */}
           <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
-            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
-              <strong>Company Name:</strong>
+            <p className="text-base sm:text-lg text-blue-900 sm:mr-4">
+              <strong className="text-xl">Company Name:</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-800 font-semibold">
               Mahalakshmi Builders & Land Promoters
@@ -137,8 +137,8 @@ export default function Contact() {
 
           {/* Location */}
           <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
-            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
-              <strong>Location:</strong>
+            <p className="text-base sm:text-lg text-blue-900 sm:mr-4">
+              <strong className="text-xl">Location:</strong>
             </p>
             <a
               href={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -148,7 +148,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="text-base sm:text-lg text-blue-600 hover:underline"
             >
-              PLOT NO. 9/2, (Old No. 1498/2) J BLOCK, 16th MAIN ROAD,
+              NO. 9/2, (Old No. 1498/2) J BLOCK, 16th MAIN ROAD,
               <br />
               ANNA NAGAR WEST, TAMILNADU CHENNAI - 600 040
             </a>
@@ -156,8 +156,8 @@ export default function Contact() {
 
           {/* Email */}
           <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
-            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
-              <strong>Email:</strong>
+            <p className="text-base sm:text-lg text-blue-900 sm:mr-4">
+              <strong className="text-xl">Email:</strong>
             </p>
             <a
               href="mailto:mahalakshmibuilders2004@gmail.com"
@@ -169,8 +169,8 @@ export default function Contact() {
 
           {/* Contact Number */}
           <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
-            <p className="text-base sm:text-lg text-gray-800 sm:mr-4">
-              <strong>Contact Number:</strong>
+            <p className="text-base sm:text-lg text-blue-900 sm:mr-4">
+              <strong className="text-xl">Contact Number:</strong>
             </p>
             <a
               href="tel:04435720996"

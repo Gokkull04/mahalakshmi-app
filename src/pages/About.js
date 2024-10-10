@@ -50,7 +50,7 @@ const AboutPage = () => {
 
       {/* Animated "About Us" heading */}
       <motion.h1
-        className="text-4xl font-bold text-center text-blue-900 mb-8 relative z-10"
+        className="text-4xl font-bold text-center text-pink-500 mb-8 relative z-10"
         initial="hidden"
         animate="visible"
         variants={headingAnimation}
@@ -71,8 +71,8 @@ const AboutPage = () => {
         <button
           className={`px-4 py-2 mx-2 rounded-lg ${
             activeTab === "plots"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-blue-900"
+              ? "bg-blue-900 text-white"
+              : "bg-gray-200 text-blue-900 hover:bg-yellow-400 hover:text-blue-900"
           }`}
           onClick={() => setActiveTab("plots")}
         >
@@ -81,8 +81,8 @@ const AboutPage = () => {
         <button
           className={`px-4 py-2 mx-2 rounded-lg ${
             activeTab === "builded-projects"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-blue-900"
+              ? "bg-blue-900 text-white"
+              : "bg-gray-200 text-blue-900 hover:bg-yellow-400 hover:text-blue-900"
           }`}
           onClick={() => setActiveTab("builded-projects")}
         >

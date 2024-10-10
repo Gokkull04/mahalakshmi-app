@@ -42,7 +42,7 @@ const Projects = () => {
         variants={staggerContainer}
       >
         <motion.h2
-          className="text-3xl font-bold text-center text-blue-900 mb-8"
+          className="text-3xl font-bold text-center text-pink-500 mb-8"
           variants={fadeIn}
         >
           Builded Projects
@@ -69,14 +69,17 @@ const Projects = () => {
             </div>
             <div className="flex-1 flex items-start justify-start">
               <p className="text-gray-700 text-lg lg:p-5 sm:p-2 text-left">
-                <strong>Project: Luxury Residential Apartments</strong> <br />
+                <strong className="text-blue-900">
+                  Project: Luxury Residential Apartments
+                </strong>{" "}
+                <br />
                 High-end residential project redefines modern living and is
                 designed to maximize natural light and airflow, offering an
                 unparalleled living experience. Ideal for families seeking an
                 exclusive living environment in the heart of the city.
                 <br />
-                <strong>Price:</strong> Competitive pricing with flexible
-                payment options available.
+                <strong className="text-blue-900">Price:</strong> Competitive
+                pricing with flexible payment options available.
               </p>
             </div>
             <div className="flex-1 hidden lg:flex items-center justify-start">
@@ -102,15 +105,18 @@ const Projects = () => {
             </div>
             <div className="flex-1 flex items-start justify-start">
               <p className="text-gray-700 text-lg lg:p-5 sm:p-2 text-left">
-                <strong>Project: Modern Commercial Complex</strong> <br />
+                <strong className="text-blue-900">
+                  Project: Modern Commercial Complex
+                </strong>{" "}
+                <br />
                 A prime commercial development catering to businesses of all
                 sizes, offering premium office spaces equipped with advanced
                 facilities. With its strategic location in the business hub, the
                 complex provides excellent visibility and easy access for both
                 customers and employees.
                 <br />
-                <strong>Price:</strong> Affordable lease terms available for
-                long-term tenants.
+                <strong className="text-blue-900">Price:</strong> Affordable
+                lease terms available for long-term tenants.
               </p>
             </div>
             <div className="flex-1 hidden lg:flex items-center justify-center">
@@ -136,14 +142,17 @@ const Projects = () => {
             </div>
             <div className="flex-1 flex items-start justify-start">
               <p className="text-gray-700 text-lg lg:p-5 sm:p-2 text-left">
-                <strong>Project: Premium Villa Development</strong> <br />
+                <strong className="text-blue-900">
+                  Project: Premium Villa Development
+                </strong>{" "}
+                <br />
                 Each villa is designed with contemporary architecture and is
                 equipped with a garden area and top-notch security systems.
                 Perfect for families or individuals seeking a peaceful and
                 opulent lifestyle away from the city buzz.
                 <br />
-                <strong>Price:</strong> Flexible pricing plans tailored to meet
-                customer needs.
+                <strong className="text-blue-900">Price:</strong> Flexible
+                pricing plans tailored to meet customer needs.
               </p>
             </div>
             <div className="flex-1 hidden lg:flex items-center justify-center">
