@@ -70,7 +70,7 @@ export default function Contact() {
       >
         {/* Title */}
         <motion.h1
-          className="text-4xl sm:text-4xl md:text-5xl font-bold text-center text-blue-900 mb-6 sm:mb-8"
+          className="text-4xl sm:text-4xl md:text-5xl font-bold text-center text-blue-900 mb-6 sm:mb-8 mt-4 sm:mt-6" // Adjusted margin for mobile
           variants={fadeIn}
         >
           Our Company
@@ -109,6 +109,9 @@ export default function Contact() {
           </motion.div>
         </motion.div>
 
+        {/* Add margin below carousel to create gap */}
+        <div className="mb-8"></div>
+
         {/* Contact Details Header */}
         <motion.h2
           className="text-4xl font-bold text-center text-blue-900 mb-8"
@@ -138,12 +141,14 @@ export default function Contact() {
               <strong>Location:</strong>
             </p>
             <a
-              href="https://www.google.com/maps?q=+J+BLOCK,+16th+MAIN+ROAD,+ANNA+NAGAR+WEST,+TAMILNADU+CHENNAI+-+600+040"
+              href={`https://www.google.com/maps?q=${encodeURIComponent(
+                "PLOT NO. 9/2, (Old No. 1498/2) J BLOCK, 16th MAIN ROAD, ANNA NAGAR WEST, CHENNAI - 600 040"
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-base sm:text-lg text-blue-600 hover:underline"
             >
-              NO. 9/2, J BLOCK, 16th MAIN ROAD,
+              PLOT NO. 9/2, (Old No. 1498/2) J BLOCK, 16th MAIN ROAD,
               <br />
               ANNA NAGAR WEST, TAMILNADU CHENNAI - 600 040
             </a>
@@ -155,10 +160,10 @@ export default function Contact() {
               <strong>Email:</strong>
             </p>
             <a
-              href="mailto:mahalakshmibuilders2002@gmail.com"
+              href="mailto:mahalakshmibuilders2004@gmail.com"
               className="text-base sm:text-lg text-blue-600 hover:underline"
             >
-              mahalakshmibuilders2002@gmail.com
+              mahalakshmibuilders2004@gmail.com
             </a>
           </div>
 
@@ -168,10 +173,10 @@ export default function Contact() {
               <strong>Contact Number:</strong>
             </p>
             <a
-              href="tel:04442801213"
+              href="tel:04435720996"
               className="text-base sm:text-lg text-blue-600 hover:underline"
             >
-              044 42801213
+              044 35720996
             </a>
           </div>
         </motion.div>
